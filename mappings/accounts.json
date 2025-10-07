@@ -1,0 +1,77 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "url": "/api/accounts/",
+        "method": "GET",
+        "headers": {
+          "Accept": {
+            "contains": "application/json"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "../__files/account-get-all-response.json"
+      }
+    },
+    {
+      "request": {
+        "urlPattern": "/api/accounts/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}",
+        "method": "GET",
+        "headers": {
+          "Accept": {
+            "contains": "application/json"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "../__files/account-get-one-response.json",
+        "transformers": ["response-template"]
+      }
+    },
+    {
+      "request": {
+        "url": "/api/accounts/",
+        "method": "POST",
+        "headers": {
+          "Content-Type": {
+            "contains": "application/json"
+          },
+          "Accept": {
+            "contains": "application/json"
+          }
+        },
+        "bodyPatterns": [
+          {
+            "matchesJsonSchema": {
+              "type": "object",
+              "required": ["name", "lastName"],
+              "properties": {
+                "name": { "type": "string" },
+                "lastName": { "type": "string" }
+              }
+            },
+            "schemaVersion": "VS202012"
+          }
+        ]
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json",
+          "Location": "/api/accounts/{{#assign 'id'}}{{randomValue type=UUID}}{{/assign}}{{id}}"
+        },
+        "bodyFileName": "../__files/account-post-response.json",
+        "transformers": ["response-template"]
+      }
+    }
+  ]
+}

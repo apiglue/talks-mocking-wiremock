@@ -1,0 +1,9 @@
+{
+  "data": [
+    {
+      "id": "{{request.pathSegments.1}}",
+      "name": "{{{pickRandom 'john' 'jane' 'alice'}}}",
+      "lastName": "{{{pickRandom 'doe' 'dae' 'smith'}}}"
+    }
+  ]
+}

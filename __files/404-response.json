@@ -1,0 +1,12 @@
+{
+  "transactionId": "{{#assign 'id'}}{{randomValue type=UUID}}{{/assign}}{{id}}",
+  "code": "INVALID_MAPPING",
+  "message": "No response could be served as there are no stub mappings in this WireMock instance",
+  "details": [
+    {
+      "code": "MAPPING_NOT_FOUND",
+      "target": "{{request.path}}",
+      "description": "Mapping '{{request.method}} {{request.path}}' not found"
+    }
+  ]
+}

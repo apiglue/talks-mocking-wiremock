@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": "f396a966-5eea-43d4-bd6a-1b44a2a16d9c",
+      "name": "john",
+      "lastName": "doe"
+    },
+    {
+      "id": "9dfc7e64-fefd-4ca9-afa8-b2589450438e",
+      "name": "jane",
+      "lastName": "doe"
+    },
+    {
+      "id": "d2f6cce8-7772-4736-96f6-33fedb61806e",
+      "name": "alice",
+      "lastName": "smith"
+    }
+  ]
+}
