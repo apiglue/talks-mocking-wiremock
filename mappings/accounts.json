@@ -2,31 +2,21 @@
   "mappings": [
     {
       "request": {
-        "url": "/api/accounts/",
-        "method": "GET",
-        "headers": {
-          "Accept": {
-            "contains": "application/json"
-          }
-        }
+        "url": "/api/accounts",
+        "method": "GET"
       },
       "response": {
         "status": 200,
         "headers": {
           "Content-Type": "application/json"
         },
-        "bodyFileName": "../__files/account-get-all-response.json"
+        "bodyFileName": "../__files/account-get-response.json"
       }
     },
     {
       "request": {
         "urlPattern": "/api/accounts/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}",
-        "method": "GET",
-        "headers": {
-          "Accept": {
-            "contains": "application/json"
-          }
-        }
+        "method": "GET"
       },
       "response": {
         "status": 200,
@@ -39,7 +29,7 @@
     },
     {
       "request": {
-        "url": "/api/accounts/",
+        "url": "/api/accounts",
         "method": "POST",
         "headers": {
           "Content-Type": {

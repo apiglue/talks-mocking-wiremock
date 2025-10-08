@@ -20,37 +20,41 @@ This project was created for talks and demonstrations about API mocking techniqu
 
 ### Accounts API
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/accounts/` | Get all accounts |
-| `GET` | `/api/accounts/{uuid}` | Get specific account by UUID |
-| `POST` | `/api/accounts/` | Create new account |
-| `GET` | `/api/health` | Health check endpoint |
+| Method | Endpoint               | Description                  |
+| ------ | ---------------------- | ---------------------------- |
+| `GET`  | `/api/accounts/`       | Get all accounts             |
+| `GET`  | `/api/accounts/{uuid}` | Get specific account by UUID |
+| `POST` | `/api/accounts/`       | Create new account           |
+| `GET`  | `/api/health`          | Health check endpoint        |
 
 ### Example Requests
 
 #### Get All Accounts
+
 ```bash
-curl -H "Accept: application/json" http://localhost:8081/api/accounts/
+curl https://talks-mocking-wiremock.onrender.com/api/accounts/
 ```
 
 #### Get Single Account
+
 ```bash
-curl -H "Accept: application/json" http://localhost:8081/api/accounts/f396a966-5eea-43d4-bd6a-1b44a2a16d9c
+curl  https://talks-mocking-wiremock.onrender.com/api/accounts/f396a966-5eea-43d4-bd6a-1b44a2a16d9c
 ```
 
 #### Create Account
+
 ```bash
 curl -X POST \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -d '{"name": "John", "lastName": "Smith"}' \
-  http://localhost:8081/api/accounts/
+  https://talks-mocking-wiremock.onrender.com/api/accounts/
 ```
 
 #### Health Check
+
 ```bash
-curl http://localhost:8081/api/health
+curl https://talks-mocking-wiremock.onrender.com/api/health
 ```
 
 ## 🚀 Quick Start
@@ -69,6 +73,7 @@ curl http://localhost:8081/api/health
 #### Using Podman
 
 1. **Build the container**:
+
    ```bash
    chmod +x podman_build.sh
    ./podman_build.sh
@@ -83,6 +88,7 @@ curl http://localhost:8081/api/health
 #### Using Docker
 
 1. **Build the image**:
+
    ```bash
    docker build -t marcelo10/talks-wiremock-contacts-api:latest .
    ```
@@ -115,18 +121,21 @@ curl http://localhost:8081/api/health
 ## 🎨 WireMock Features Demonstrated
 
 ### 1. Request Matching
+
 - **URL patterns** with regex support (UUID validation)
 - **HTTP method** matching
 - **Header** validation
 - **JSON Schema** validation for request bodies
 
 ### 2. Response Templating
+
 - **Dynamic UUIDs** generation
 - **Request data extraction** (path parameters, JSON body)
 - **Random value selection** from predefined lists
 - **Handlebars templating** for complex responses
 
 ### 3. Advanced Features
+
 - **Priority-based** request matching
 - **Custom transformers** for response processing
 - **Location headers** with dynamic values
@@ -135,6 +144,7 @@ curl http://localhost:8081/api/health
 ## 📊 Response Examples
 
 ### Get All Accounts Response
+
 ```json
 {
   "data": [
@@ -153,6 +163,7 @@ curl http://localhost:8081/api/health
 ```
 
 ### Create Account Response
+
 ```json
 {
   "data": [
@@ -168,15 +179,18 @@ curl http://localhost:8081/api/health
 ## 🔧 Configuration
 
 ### Port Configuration
+
 - **Default port**: 8081
 - **Change port**: Modify the `--port` parameter in scripts or Dockerfile
 
 ### Adding New Endpoints
+
 1. Create mapping files in `mappings/` directory
 2. Add response templates in `__files/` directory
 3. Restart the WireMock server
 
 ### Customizing Responses
+
 - Edit JSON files in `__files/` directory
 - Use Handlebars templating for dynamic content
 - Refer to [WireMock documentation](http://wiremock.org/docs/) for advanced features
@@ -184,6 +198,7 @@ curl http://localhost:8081/api/health
 ## 📚 Learning Resources
 
 This project demonstrates key concepts for:
+
 - **API mocking** strategies
 - **Test automation** with external dependencies
 - **Service virtualization** techniques
