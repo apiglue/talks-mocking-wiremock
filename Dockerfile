@@ -25,7 +25,7 @@ COPY mappings/ /wiremock/mappings/
 COPY __files/ /wiremock/__files/
 
 # Run WireMock
-ENTRYPOINT ["java", "-jar", "wiremock-standalone.jar"]
-CMD ["--port", "8081", "--verbose"]
+# Use PORT environment variable for Render compatibility (defaults to 8081 for local)
+ENTRYPOINT ["sh", "-c", "java -jar wiremock-standalone.jar --port ${PORT:-8081} --verbose"]
 
 #ENTRYPOINT exec java $JAVA_OPTS @FW_OPTS -Djava.security.egd=file:/dev/./urandom -jar wiremock-standalone.jar --port 8081 --verbose --supported-proxy-encodings=gzip,deflate
