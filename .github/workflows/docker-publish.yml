@@ -10,14 +10,8 @@ on:
     branches: ["main"]
     # Publish semver tags as releases.
     tags: ["v*.*.*"]
-    paths:
-      - "Dockerfile"
-      - ".github/workflows/docker-publish.yml"
   pull_request:
     branches: ["main"]
-    paths:
-      - "Dockerfile"
-      - ".github/workflows/docker-publish.yml"
 
 env:
   # Use docker.io for Docker Hub if empty
