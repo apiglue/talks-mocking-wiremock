@@ -59,7 +59,7 @@
                 "lastName": { "type": "string" }
               }
             },
-            "schemaVersion": "VS202012"
+            "schemaVersion": "V202012"
           }
         ]
       },
