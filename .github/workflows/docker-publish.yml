@@ -99,7 +99,7 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
 
-      # - name: Call deployment webhook
-      #   if: success()
-      #   run: |
-      #     curl -X POST "${{ secrets.DEPLOYMENT_WEBHOOK }}"
+      - name: Call deployment webhook
+        if: success()
+        run: |
+          curl -X POST "${{ secrets.DEPLOYMENT_WEBHOOK }}"
