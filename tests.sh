@@ -4,7 +4,8 @@
 # This script tests all WireMock mappings to ensure they're functioning properly
 
 # Configuration
-BASE_URL="http://localhost:8081"
+#BASE_URL="http://localhost:8081"
+BASE_URL="https://talks-mocking-wiremock.onrender.com"
 BLUE='\033[0;34m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -149,7 +150,7 @@ print_header "Test 10: Verify Response Headers"
 echo "Request: GET ${BASE_URL}/api/accounts (checking headers)"
 response=$(curl -s -i "${BASE_URL}/api/accounts")
 echo "$response"
-if echo "$response" | grep -q "Content-Type: application/json"; then
+if echo "$response" | grep -iq "Content-Type: application/json"; then
     echo "${GREEN}✓ PASS${NC} - Content-Type header is correct"
 else
     echo "${RED}✗ FAIL${NC} - Content-Type header is missing or incorrect"
@@ -165,7 +166,7 @@ response=$(curl -s -i \
     -d '{"name": "Test", "lastName": "User"}' \
     "${BASE_URL}/api/accounts")
 echo "$response"
-if echo "$response" | grep -q "Location: /api/accounts/"; then
+if echo "$response" | grep -iq "Location: /api/accounts/"; then
     echo "${GREEN}✓ PASS${NC} - Location header is present"
 else
     echo "${RED}✗ FAIL${NC} - Location header is missing"
