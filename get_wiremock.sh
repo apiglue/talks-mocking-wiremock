@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # WireMock version to download
-WIREMOCK_VERSION="3.13.1"
+WIREMOCK_VERSION="3.9.1"
 
 # WireMock JAR filename
 WIREMOCK_JAR="wiremock-standalone-${WIREMOCK_VERSION}.jar"

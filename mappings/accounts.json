@@ -57,7 +57,7 @@
         "status": 201,
         "headers": {
           "Content-Type": "application/json",
-          "Location": "/api/accounts/{{#assign 'id'}}{{randomValue type=UUID}}{{/assign}}{{id}}"
+          "Location": "/api/accounts/{{#assign 'id'}}{{randomValue type='UUID'}}{{/assign}}{{id}}"
         },
         "bodyFileName": "../__files/account-post-response.json",
         "transformers": ["response-template"]

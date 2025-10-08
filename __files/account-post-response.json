@@ -1,9 +1,9 @@
 {
   "data": [
     {
-      "id": "{{#assign 'id'}}{{randomValue type=UUID}}{{/assign}}{{id}}",
-      "name": "{{jsonpath request.body '$.name'}}",
-      "lastName": "{{jsonpath request.body '$.lastName'}}"
+      "id": "{{#assign 'id'}}{{randomValue type='UUID'}}{{/assign}}{{id}}",
+      "name": "{{jsonPath request.body '$.name'}}",
+      "lastName": "{{jsonPath request.body '$.lastName'}}"
     }
   ]
 }

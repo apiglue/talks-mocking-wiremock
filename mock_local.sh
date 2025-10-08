@@ -1,2 +1,2 @@
 #!/bin/zsh
-java -jar wiremock-standalone-3.13.1.jar --port 8081 --verbose
+java -jar wiremock-standalone-3.9.1.jar --port 8081 --verbose
